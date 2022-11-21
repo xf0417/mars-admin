@@ -1,6 +1,5 @@
 <template>
-  <div>sjjj</div>
-  <router-view />dwdsdfsfs
+  <router-view />
 </template>
 
 <script setup>

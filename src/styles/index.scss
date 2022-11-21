@@ -7,7 +7,7 @@ body {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
-    Microsoft YaHei, Arial, sans-serif;
+        Microsoft YaHei, Arial, sans-serif;
 }
 
 #app {
@@ -36,6 +36,10 @@ a:hover {
 }
 
 div:focus {
+    outline: none;
+}
+
+.clearfix {
     &:after {
         visibility: hidden;
         display: block;

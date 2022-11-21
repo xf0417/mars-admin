@@ -7,18 +7,18 @@
             <!-- username -->
             <el-form-item>
                 <span class="svg-container">
-                    <el-icon>
-                        <Aim />
-                    </el-icon>
+                    <span class="svg-container">
+                        <svg-icon icon="https://res.lgdsunday.club/user.svg"></svg-icon>
+                    </span>
                 </span>
                 <el-input placeholder="username" name="username" type="text"></el-input>
             </el-form-item>
             <!-- password -->
             <el-form-item>
                 <span class="svg-container">
-                    <el-icon>
-                        <Aim />
-                    </el-icon>
+                    <span class="svg-container">
+                        <svg-icon icon="https://res.lgdsunday.club/user.svg"></svg-icon>
+                    </span>
                 </span>
                 <el-input placeholder="password" name="password"></el-input>
                 <span class="show-pwd">
@@ -35,6 +35,7 @@
 </template>
 
 <script setup>
+import SvgIcon from '@/components/SvgIcon/index.vue'
 import { } from 'vue'
 import { Aim } from "@element-plus/icons-vue"
 
@@ -59,11 +60,12 @@ $cursor: #fff;
         margin: 0 auto;
         overflow: hidden;
 
-        .el-form-item {
+        :deep(.el-form-item) {
             border: 1px solid rgba(255, 255, 255, .1);
             background: rgba(0, 0, 0, 0.1);
             border-radius: 5px;
             color: #454545;
+
         }
 
         :deep(.el-input) {
@@ -71,7 +73,9 @@ $cursor: #fff;
             height: 47px;
             width: 85%;
 
-            input {
+           
+
+            .input {
                 height: 47px;
                 width: 100%;
                 background-color: transparent;

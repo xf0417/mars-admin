@@ -20,8 +20,9 @@
     "@vue/eslint-config-prettier": "^7.0.0",
     "eslint": "^8.22.0",
     "eslint-plugin-vue": "^9.3.0",
+    "fast-glob": "^3.2.12",
     "prettier": "^2.7.1",
     "vite": "^3.1.8",
-    "vite-plugin-svg-icons": "^0.1.0"
+    "vite-plugin-svg-icons": "^2.0.1"
   }
 }

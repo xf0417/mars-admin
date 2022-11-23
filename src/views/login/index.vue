@@ -1,6 +1,6 @@
 <template>
     <div class="login-container">
-        <el-form class="login-form" :model="loginForm" :rules="loginRules">
+        <el-form class="login-form" ref="loginFormRef" :model="loginForm" :rules="loginRules">
             <div class="title-container">
                 <h3 class="title">用户登录</h3>
 
@@ -21,11 +21,8 @@
                         <svg-icon icon="password"></svg-icon>
                     </span>
                 </span>
-                <el-input placeholder="password" 
-                name="password" 
-                :type="passswordType"
-                v-model="loginForm.password"
-                ></el-input>
+                <el-input placeholder="password" name="password" :type="passswordType" v-model="loginForm.password">
+                </el-input>
                 <span class="show-pwd">
                     <span class="svg-container" @click="onChangePwdType">
                         <svg-icon :icon="passwordIcon"></svg-icon>
@@ -34,7 +31,8 @@
             </el-form-item>
 
             <!-- 登录按钮 -->
-            <el-button type="primary" style="width: 100%; magin-bottom: 30px">登录</el-button>
+            <el-button type="primary" style="width: 100%;
+            magin-bottom: 30px" :loading="false" @click="handleLogin">登录</el-button>
         </el-form>
     </div>
 </template>
@@ -42,6 +40,7 @@
 <script setup>
 import { ref } from 'vue'
 import { validatePassword } from './rules'
+import { useStore } from 'vuex'
 //数据源
 const loginForm = ref({
     username: 'super-admin',
@@ -69,13 +68,35 @@ const onChangePwdType = () => {
     if (passswordType.value === 'password') {
         passswordType.value = 'text'
         passwordIcon.value = 'eye-open'
-        console.log(passswordType.value)
     } else {
         passswordType.value = 'password'
         passwordIcon.value = 'eye'
-        console.log(passswordType.value)
     }
 }
+
+//处理登录
+const loading = ref(false)
+const store = useStore()
+const loginFormRef = ref(null)
+const handleLogin = () => {
+    //进行表单校验
+    loginFormRef.value.validate(valid => {
+        if (!valid) return
+        //触发登录动作
+        loading.value = true
+        store
+        .dispatch('user/login', loginForm.value)
+        .then(() => {
+                loading.value = false
+                //登陆后处理
+            })
+            .catch(err => {
+                console.log(err)
+                loading.value = false
+            })
+    })
+}
+
 </script>
 
 <style lang="scss" scoped>

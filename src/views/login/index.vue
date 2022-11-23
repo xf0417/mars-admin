@@ -21,10 +21,14 @@
                         <svg-icon icon="password"></svg-icon>
                     </span>
                 </span>
-                <el-input placeholder="password" name="password" v-model="loginForm.password"></el-input>
+                <el-input placeholder="password" 
+                name="password" 
+                :type="passswordType"
+                v-model="loginForm.password"
+                ></el-input>
                 <span class="show-pwd">
-                    <span class="svg-container">
-                        <svg-icon icon="eye"></svg-icon>
+                    <span class="svg-container" @click="onChangePwdType">
+                        <svg-icon :icon="passwordIcon"></svg-icon>
                     </span>
                 </span>
             </el-form-item>
@@ -57,6 +61,21 @@ const loginRules = ref({
     }
 
 })
+//处理密码框文本
+const passswordType = ref('password')
+const passwordIcon = ref('eye')
+const onChangePwdType = () => {
+    //当passwordType值为password的时候改为text
+    if (passswordType.value === 'password') {
+        passswordType.value = 'text'
+        passwordIcon.value = 'eye-open'
+        console.log(passswordType.value)
+    } else {
+        passswordType.value = 'password'
+        passwordIcon.value = 'eye'
+        console.log(passswordType.value)
+    }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -131,7 +150,6 @@ $cursor: #fff;
     .show-pwd {
         position: absolute;
         right: 10px;
-        top: 7px;
         font-size: 16px;
         color: $dark_gray;
         cursor: pointer;

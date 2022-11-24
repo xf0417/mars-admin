@@ -1,9 +1,9 @@
 import axios from 'axios'
 
-const serve = axios.create({
+const service = axios.create({
     baseURL:import.meta.env.VITE_BASE_API,
     timeout: 5000
 })
 
 
-export default serve
+export default service

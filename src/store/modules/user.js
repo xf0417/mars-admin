@@ -1,11 +1,20 @@
 import { login } from '@/api/sys'
 import md5 from 'md5'
+import {setItem, getItem} from '@/utils/storage'
+import {TOKEN} from '@/constant'
 
 export default {
     namespaced: true,
-    state: () => ({}),
-    mutations: {},
-    action: {
+    state: () => ({
+        token: getItem(TOKEN) || ''
+    }),
+    mutations: {
+        setToken(state, token){
+            state.token = token
+            setItem(TOKEN, value)
+        }
+    },
+    actions: {
 
         //登录请求动作
         login (context, userInfo) {
@@ -15,7 +24,8 @@ export default {
                     username,
                     password: md5(password)
                 }).then(data =>{
-                    resolve
+                    this.commit('user/setToken',data.data.data.token)
+                    resolve()
                 }).catch(err =>{
                     reject(err)
                 })

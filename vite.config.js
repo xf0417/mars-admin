@@ -18,7 +18,9 @@ export default defineConfig({
     proxy: {
       //当地址中包含/api时触发此代理
       '/api': {
-        target: 'http://jsonplaceholder.typicode.com',
+        // target: 'https://jsonplaceholder.typicode.com',
+        // target:'http://localhost:3000',
+        target: 'https://api.imooc-admin.lgdsunday.club/',
         changeOrigin: true
       }  
     }

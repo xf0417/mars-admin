@@ -5,7 +5,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "server": "json-server --watch mock/db.json"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.10",
@@ -24,6 +25,7 @@
     "eslint": "^8.22.0",
     "eslint-plugin-vue": "^9.3.0",
     "fast-glob": "^3.2.12",
+    "json-server": "^0.17.1",
     "prettier": "^2.7.1",
     "vite": "^3.1.8",
     "vite-plugin-svg-icons": "^2.0.1"

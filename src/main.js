@@ -6,6 +6,8 @@ import 'element-plus/dist/index.css'
 import '@/styles/index.scss'
 import 'virtual:svg-icons-register';
 import store from './store'
+import './permission'
+
 // 需要全局引入再添加
 import svgIcon from '@/components/SvgIcon/index.vue' // 全局svg图标组件
 

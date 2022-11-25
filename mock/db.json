@@ -1,0 +1,51 @@
+{
+  "login": {
+    "username": "super-admin",
+    "password": "e10adc3949ba59abbe56e057f20f883e"
+  },
+  "datas": [
+    {
+      "username": "xiaofang",
+      "id": 123,
+      "password": 1234
+    },
+    {
+      "username": "xiaofang",
+      "id": 1234,
+      "password": 1234
+    }
+  ],
+  "profile": {
+    "success": true,
+    "code": 200,
+    "data": {
+      "role": [
+        {
+          "id": "1",
+          "title": "超级管理员"
+        }
+      ],
+      "_id": "637fcd40dc0ccf437cb43dee",
+      "id": "612710a9ec87aa543c9c3420",
+      "username": "super-admin",
+      "title": "超级管理员",
+      "avatar": "https://m.imooc.com/static/wap/static/common/img/logo-small@2x.png",
+      "permission": {
+        "menus": [
+          "userManage",
+          "roleList",
+          "permissionList",
+          "articleRanking",
+          "articleCreate"
+        ],
+        "points": [
+          "distributeRole",
+          "importUser",
+          "removeUser",
+          "distributePermission"
+        ]
+      }
+    },
+    "message": "获取资料成功"
+  }
+}

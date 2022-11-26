@@ -9,7 +9,7 @@ const service = axios.create({
 //响应拦截器
 service.interceptors.response.use(
     response => {
-        const {success, message, data} =response.data
+        const {success, message, data} = response.data
         //判断请求是否成功
         if(success) {
             //成功后返回数据
@@ -23,7 +23,7 @@ service.interceptors.response.use(
     //请求失败
 
     error => { 
-        ELMessage.error(error.message)
+        ElMessage.error(error.message)
         return Promise.reject(error)
     }
     )

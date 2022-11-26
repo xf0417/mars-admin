@@ -13,6 +13,16 @@ export const login = data => {
     })
 }
 
+/**
+ * 
+* 登录
+*return promise 实例
+ */
+export const getUserInfo = () => {
+    return request({
+        url:'/sys/profile'
+    })
+}
 // export const addRecords = (data) => {
 //     return request({
 //         url: '/data',

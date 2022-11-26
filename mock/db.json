@@ -1,7 +1,11 @@
 {
   "login": {
-    "username": "super-admin",
-    "password": "14e1b600b1fd579f47433b88e8d85291"
+    "success": true,
+    "code": 200,
+    "data": {
+      "token": "09c31666-8ce8-4d59-9a2c-2ff2402bdd77"
+    },
+    "message": "登录成功"
   },
   "datas": [
     {

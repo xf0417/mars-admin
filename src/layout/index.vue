@@ -1,33 +1,33 @@
 <template>
     <div class="app-wrapper">
         <!--左侧menu-->
-        <sidebar class="sidebar-container" :style="{backgroundcolor: variable.menuBg}"></sidebar>
-        <div class="main-sontainer">
-            <div class="fix-header">
+        <Sidebar class="sidebar-container"></Sidebar>
+        <div class="main-container">
+            <div class="fixed-header">
                 <!--顶部navbar-->
                 <navbar />
             </div>
+            <!--内容-->
+            <app-main></app-main>
         </div>
-        <!--内容-->
-        <app-main></app-main>
     </div>
 </template>
 
 <script setup>
 import Navbar from './components/Navbar.vue'
-import Sidebar from './components/Sidebar'
+import Sidebar from './components/Sidebar/index.vue'
 import AppMain from './components/AppMain.vue'
-import variables from '@/styles/variables.scss'
+import variables from '@/styles/variables.module.scss'
 import {} from 'vue'
 
 console.log(variables)
 
-
 </script>
 
 <style lang="scss" scoped>
-@import '~@/styles/mixin.scss';
-@import '~@/styles/variables.scss';
+// @import '@/styles/mixin.module.scss';
+@import '@/styles/variables.module.scss';
+@import '@/styles/sidebar.module.scss';
 
 .app-wrapper {
     @include clearfix;
@@ -35,7 +35,7 @@ console.log(variables)
     height: 100%;
     width: 100%;
 }
-.fix-header {
+.fixed-header {
     position: fixed;
     top: 0;
     right: 0;

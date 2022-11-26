@@ -2,13 +2,13 @@
     .main-container {
         min-height: 100%;
         transition: margin-left 0.28s;
-        margin-left: $sideBarWidth;
+        margin-left: 210px;
         position: relative;
     }
 
     .sidebar-container {
         transition: width 0.28s;
-        width: $sideBarWidth !important;
+        width: 210px !important;
         height: 100%;
         position: fixed;
         top: 0;
@@ -16,6 +16,7 @@
         left: 0;
         z-index: 1001;
         overflow: hidden;
+        background-color: #304156;
 
         // 重翼 element-plus 的css
         .horizontal-collapse-transition {
@@ -67,12 +68,12 @@
         }
 
         .is-active>.el-submenu_title {
-            color: $subMenuActiveText !important;
+            color: #f4f4f5 !important;
         }
 
         & .nest-menu .el-submenu>.el-submenu_title,
         & .el-submenu .el-menu-item {
-            min-width: $sideBarwidth !important;
+            min-width: 210px !important;
         }
     }
 
@@ -138,7 +139,7 @@
     }
 
     .el-menu--collapse .el-menu .el-sub-menu {
-        min-width: $sideBarWidth !important;
+        min-width: 210px !important;
     }
 
     .withoutAnimation {

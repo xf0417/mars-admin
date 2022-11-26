@@ -9,7 +9,7 @@ export default defineConfig({
   
 
   plugins: [vue(),
-  createSvgIconsPlugin({
+    createSvgIconsPlugin({
     iconDirs: [path.resolve(process.cwd(), 'src/icons/svg')],
     symbolId: 'icon-[dir]-[name]',
   })],
@@ -31,6 +31,15 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
-  
+
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@import "@/styles/mixin.module.scss";'
+      }
+    }
+  },
+
 });
+
 

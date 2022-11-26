@@ -11,7 +11,7 @@ export default {
     mutations: {
         setToken(state, token){
             state.token = token
-            setItem(TOKEN, value)
+            setItem(TOKEN, token)
         }
     },
     actions: {

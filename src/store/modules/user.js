@@ -2,7 +2,7 @@ import { login, getUserInfo} from '@/api/sys'
 import md5 from 'md5'
 import {setItem, getItem,removeAllItem} from '@/utils/storage'
 import {TOKEN} from '@/constant'
-import { router } from 'json-server'
+import router from '@/router'
 
 export default {
     namespaced: true,
@@ -41,8 +41,8 @@ export default {
             this.commit('user/setUserInfo', res)
             return res
         },
-        logout () {
-            this.commit('user/setToken',res)
+        logout (state) {
+            this.commit('user/setToken',state.TOKEN)
             this.commit('user/setUserInfo',{})
             removeAllItem()
             //TODO:清理权限

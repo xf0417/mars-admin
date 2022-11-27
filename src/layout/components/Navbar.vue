@@ -5,7 +5,7 @@
             <el-dropdown class="avatar-container" trigger="click">
                 <div class="avatar-wrapper">
                     <el-avatar shape="square" :size="40" :src="rightLogo">
-                        <i class="el-icon-s-tools"></i>
+                        <i class="el-tools"></i>
                     </el-avatar>
                 </div>
                 <template #dropdown>
@@ -59,6 +59,12 @@ const logout = () => {
                 .el-avatar {
                     --el--avatar-background-color: none;
                     margin-right: 12px;
+
+                    .el-tools {
+                        background-image: url(../assets/tools.png) center no-repeat;
+                        background-size: cover;
+
+                    }
                 }
             }
         }

@@ -20,7 +20,6 @@ import AppMain from './components/AppMain.vue'
 import variables from '@/styles/variables.module.scss'
 import {} from 'vue'
 
-console.log(variables)
 
 </script>
 

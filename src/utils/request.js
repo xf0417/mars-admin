@@ -1,6 +1,7 @@
 import axios from 'axios'
 import store from '@/store'
 import {ElMessage} from 'element-plus'
+import router from '@/router'
 
 const service = axios.create({
     baseURL: import.meta.env.VITE_BASE_API,

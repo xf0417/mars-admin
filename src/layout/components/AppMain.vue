@@ -1,5 +1,7 @@
 <template>
-    <div class="app-main">AppMain</div>
+    <div class="app-main">
+        <RouterView />
+    </div>
 </template>
 
 <script setup>

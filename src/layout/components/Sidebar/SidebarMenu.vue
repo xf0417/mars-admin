@@ -7,7 +7,7 @@
     active-text-color="#ffd04b">
     <el-sub-menu index="1">
         <template #title>
-            <i class="el-location"></i>
+            <el-icon><User /></el-icon>
             <span>导航</span>
         </template>
         <el-menu-item index="1-1">选项1</el-menu-item>

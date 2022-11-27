@@ -5,7 +5,7 @@
             <el-dropdown class="avatar-container" trigger="click">
                 <div class="avatar-wrapper">
                     <el-avatar shape="square" :size="40" :src="rightLogo">
-                        <i class="el-tools"></i>
+                        <el-icon><Tools /></el-icon>
                     </el-avatar>
                 </div>
                 <template #dropdown>
@@ -14,7 +14,9 @@
                             <el-dropdown-item>主页</el-dropdown-item>
                         </router-link>
                         <a target="_blank" href="#">
-                            <el-dropdown-item>课程主页</el-dropdown-item>
+                            <el-dropdown-item>课程主页
+                                <el-icon><Tools /></el-icon>
+                            </el-dropdown-item>
                         </a>
                         <el-dropdown-item divided @click="logout">退出登录</el-dropdown-item>
                     </el-dropdown-menu>
@@ -61,7 +63,7 @@ const logout = () => {
                     margin-right: 12px;
 
                     .el-tools {
-                        background-image: url(../assets/tools.png) center no-repeat;
+                        background-image: url(@/assets/tools.png) center no-repeat;
                         background-size: cover;
 
                     }

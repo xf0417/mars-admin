@@ -1,14 +1,14 @@
 <template>
     <div class="app-wrapper">
         <!--左侧menu-->
-        <Sidebar class="sidebar-container"></Sidebar>
+        <Sidebar class="sidebar-container"/>
         <div class="main-container">
             <div class="fixed-header">
                 <!--顶部navbar-->
                 <navbar />
             </div>
             <!--内容-->
-            <app-main></app-main>
+            <app-main />
         </div>
     </div>
 </template>

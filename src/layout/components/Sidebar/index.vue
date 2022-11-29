@@ -1,8 +1,8 @@
 <template>
     <div class="">
-        <h1>aa</h1>
+        <h1>aaa</h1>
         <el-scrollbar>
-            <sidebar-menu></sidebar-menu>
+            <SidebarMenu />
         </el-scrollbar>
     </div>
 </template>

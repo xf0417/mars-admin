@@ -1,6 +1,6 @@
 import { fileURLToPath, URL } from "node:url";
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
-import path from 'path-browserify'
+import path from 'path'
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 

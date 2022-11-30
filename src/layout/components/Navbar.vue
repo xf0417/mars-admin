@@ -1,11 +1,15 @@
 <template>
     <div class="navbar">
+        <!-- 汉堡按钮 -->
+        <hamburger class="hamburger-container" />
         <div class="right-menu">
             <!-- 头像 -->
             <el-dropdown class="avatar-container" trigger="click">
                 <div class="avatar-wrapper">
                     <el-avatar shape="square" :size="40" :src="rightLogo">
-                        <el-icon><Tools /></el-icon>
+                        <el-icon>
+                            <Tools />
+                        </el-icon>
                     </el-avatar>
                 </div>
                 <template #dropdown>
@@ -15,7 +19,9 @@
                         </router-link>
                         <a target="_blank" href="#">
                             <el-dropdown-item>课程主页
-                                <el-icon><Tools /></el-icon>
+                                <el-icon>
+                                    <Tools />
+                                </el-icon>
                             </el-dropdown-item>
                         </a>
                         <el-dropdown-item divided @click="logout">退出登录</el-dropdown-item>
@@ -29,7 +35,8 @@
 <script setup>
 import { } from 'vue'
 import rightLogo from '@/assets/rightLogo.png'
-import {useStore} from 'vuex'
+import { useStore } from 'vuex'
+import Hamburger from '@/components/Hamburger/index.vue'
 
 const store = useStore()
 const logout = () => {
@@ -44,6 +51,18 @@ const logout = () => {
     position: relative;
     background-color: #fff;
     box-shadow: 0 1px 4px rgba(0, 21, 41, .08);
+
+    .hamburger-container {
+        line-height: 46px;
+        height: 100%;
+        float: left;
+        cursor: pointer;
+        transition: background 0.5s;
+
+        &:hover {
+            background: rgba(0, 0, 0, 0.1);
+        }
+    }
 
     .right-menu {
         display: flex;

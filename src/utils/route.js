@@ -39,7 +39,6 @@ export function generateMenus (routes, basePath = '') {
     //不满足条件'mata && meta.title && meta.icon'的数据不应该存在
     routes.forEach((item) =>{
         //不存在children &&不存在meta直接return
-        if(isNull(item.meta.icon) || item.meta.icon == 'el-icon') return
         if(isNull(item.children) && isNull(item.meta)) return
         //存在children不存在meta，迭代generateMenus
         if(isNull(item.meta) && !isNull(item.children)){
@@ -60,9 +59,9 @@ export function generateMenus (routes, basePath = '') {
                 chidren:[]
             }
             //icon && title
-            if(route.meta.icon && route.meta.title){
-                result.push(route)
-            }
+        }
+        if(route.meta.icon && route.meta.title){
+            result.push(route)
         }
         //存在children 存在meta
         if(item.chidren){

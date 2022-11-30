@@ -1,7 +1,7 @@
 <template>
     <!-- element icon -->
-    <i v-if="icon.includes('el-icon')" class="sub-el-icon" :icon="icon">
     
+    <i v-if="(icon==null || icon==undefined)" class="sub-el-icon" :icon="icon">
     </i>
     <!-- 非element icon -->
     <svg-icon v-else :icon="icon"></svg-icon>
@@ -18,7 +18,7 @@ defineProps({
     },
     icon:{
         type: String,
-        required:true
+        required:false
     }
 })
 </script>

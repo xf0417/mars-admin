@@ -1,11 +1,13 @@
 <template>
-    <el-menu 
+    <el-menu
+    :collapse="!$store.getters.sidebarOpened"
+    :default-active="activeMenu"
     :unique-opened="true"
     default-actice="1"
-    background-color="#545c64"
+    background-color="#54$5c64"
     text-color="#fff"
     active-text-color="#ffd04b"
-    menu-trigger="click"
+    router
     >
     <SideBarItem
     v-for="item in routes"
@@ -29,6 +31,12 @@ const routes = computed(() => {
     return generateMenus(filterRoutes)
 })
 console.log(JSON.stringify(routes.value))
+
+const route = useRouter()
+const activeMenu = computed (() => {
+    const {path} = route
+    return path
+})
 
 </script>
 

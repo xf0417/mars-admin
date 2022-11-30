@@ -35,12 +35,12 @@ const privateRouters = [
         }
       },
       {
-        path: '/user/info/:id',
+        path: '/user/info',
+        // path: '/user/info/:id',
         name: 'userInfo',
         component: () => import('@/views/user-info/index.vue'),
         meta: {
           title: 'userInfo',
-          icon: 'el-icon'
         }
       },
       {
@@ -49,7 +49,6 @@ const privateRouters = [
         component: () => import('@/views/import/index.vue'),
         meta: {
           title: 'excelImport',
-          icon: 'el-icon'
         }
       },
     ]
@@ -76,7 +75,6 @@ const privateRouters = [
         component: () => import('@/views/article-detail/index.vue'),
         meta: {
           title: 'articleDetail',
-          icon: 'el-icon'
         }
       },
       {
@@ -92,7 +90,6 @@ const privateRouters = [
         component: () => import('@/views/article-create/index.vue'),
         meta: {
           title: 'articleEditor',
-          icon: 'el-icon'
         }
       },
 

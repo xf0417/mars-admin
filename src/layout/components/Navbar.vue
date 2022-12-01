@@ -2,15 +2,16 @@
     <div class="navbar">
         <!-- 汉堡按钮 -->
         <hamburger class="hamburger-container" />
+        <Breadcrumb class="breadcrumb-container" />
         <div class="right-menu">
             <!-- 头像 -->
             <el-dropdown class="avatar-container" trigger="click">
                 <div class="avatar-wrapper">
                     <el-avatar shape="square" :size="40" :src="rightLogo">
-                        <el-icon>
-                            <Tools />
-                        </el-icon>
                     </el-avatar>
+                    <el-icon>
+                        <Tools />
+                    </el-icon>
                 </div>
                 <template #dropdown>
                     <el-dropdown-menu class="user-dropdown">
@@ -19,9 +20,6 @@
                         </router-link>
                         <a target="_blank" href="#">
                             <el-dropdown-item>课程主页
-                                <el-icon>
-                                    <Tools />
-                                </el-icon>
                             </el-dropdown-item>
                         </a>
                         <el-dropdown-item divided @click="logout">退出登录</el-dropdown-item>
@@ -37,6 +35,7 @@ import { } from 'vue'
 import rightLogo from '@/assets/rightLogo.png'
 import { useStore } from 'vuex'
 import Hamburger from '@/components/Hamburger/index.vue'
+import Breadcrumb from '@/components/Breadcrumb/index.vue'
 
 const store = useStore()
 const logout = () => {
@@ -62,6 +61,10 @@ const logout = () => {
         &:hover {
             background: rgba(0, 0, 0, 0.1);
         }
+    }
+
+    .breadcrumb-container {
+        float: left;
     }
 
     .right-menu {

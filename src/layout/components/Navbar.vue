@@ -1,9 +1,14 @@
 <template>
     <div class="navbar">
         <!-- 汉堡按钮 -->
-        <hamburger class="hamburger-container" />
-        <Breadcrumb class="breadcrumb-container" />
+        <div>
+            <hamburger class="hamburger-container" />
+        </div>
+        <div>
+            <Breadcrumb class="breadcrumb-container" />
+        </div>
         <div class="right-menu">
+            <lang-select class="right-menu-item hover-effect" />
             <!-- 头像 -->
             <el-dropdown class="avatar-container" trigger="click">
                 <div class="avatar-wrapper">
@@ -36,6 +41,7 @@ import rightLogo from '@/assets/rightLogo.png'
 import { useStore } from 'vuex'
 import Hamburger from '@/components/Hamburger/index.vue'
 import Breadcrumb from '@/components/Breadcrumb/index.vue'
+import LangSelect from '@/components/LangSelect/index.vue'
 
 const store = useStore()
 const logout = () => {

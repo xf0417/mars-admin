@@ -2,8 +2,8 @@
     <div class="login-container">
         <el-form class="login-form" ref="loginFormRef" :model="loginForm" :rules="loginRules">
             <div class="title-container">
-                <h3 class="title">用户登录</h3>
-
+                <h3 class="title">{{ $t('msg.login.title') }}</h3>
+                <langselect class="lang-select"/>
             </div>
             <!-- username -->
             <el-form-item prop="username">
@@ -31,8 +31,11 @@
             </el-form-item>
 
             <!-- 登录按钮 -->
-            <el-button type="primary" style="width: 100%;
-            magin-bottom: 30px" :loading="false" @click="handleLogin">登录</el-button>
+            <el-button type="primary" 
+            style="width: 100%
+            magin-bottom: 30px" 
+            :loading="false" 
+            @click="handleLogin">{{ $t('msg.login.loginBtn') }}</el-button>
         </el-form>
     </div>
 </template>
@@ -42,6 +45,7 @@ import { ref } from 'vue'
 import { validatePassword } from './rules'
 import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
+import langselect from '@/components/LangSelect/index.vue'
 const router = useRouter()
 //数据源
 const loginForm = ref({
@@ -87,8 +91,8 @@ const handleLogin = () => {
         //触发登录动作
         loading.value = true
         store
-        .dispatch('user/login', loginForm.value)
-        .then(() => {
+            .dispatch('user/login', loginForm.value)
+            .then(() => {
                 loading.value = false
                 router.push('/')
                 //登陆后处理
@@ -121,7 +125,7 @@ $cursor: #fff;
         margin: 0 auto;
         overflow: hidden;
 
-        :deep(.el-form-item) {
+        .el-form-item {
             border: 1px solid rgba(255, 255, 255, .1);
             background: rgba(0, 0, 0, 0.1);
             border-radius: 5px;
@@ -129,7 +133,7 @@ $cursor: #fff;
 
         }
 
-        :deep(.el-input) {
+        .el-input {
             display: inline-block;
             height: 47px;
             width: 85%;
@@ -178,6 +182,16 @@ $cursor: #fff;
         color: $dark_gray;
         cursor: pointer;
         user-select: none;
+    }
+    .lang-select{
+        position: absolute;
+        top:4px;
+        right: 0;
+        background-color: #fff;
+        font-size: 22px;
+        padding: 4px;
+        border-radius: 4px;
+        cursor: pointer;
     }
 }
 </style>

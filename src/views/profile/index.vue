@@ -1,6 +1,12 @@
 <template>
-  <div class="">个人中心112s
-   
+  <div class="">
+    {{$t('msg.test')}}
+    <el-pagination
+      :page-size="100"
+      :small="small"
+      layout="total, prev, pager, next"
+      :total="1000"
+    />
    <svg-icon icon="user"></svg-icon>
   </div>
 </template>

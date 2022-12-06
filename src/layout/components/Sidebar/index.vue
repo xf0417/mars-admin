@@ -1,7 +1,7 @@
 <template>
     <div class="">
         <div class="logo-container">
-            <el-avatar size="44" shape="square" :src="rightLogo">
+            <el-avatar size="large" shape="square" :src="rightLogo">
             </el-avatar>
             <h1 class="logo-title" v-if="$store.getters.sidebarOpened">
                 mars-admin</h1>

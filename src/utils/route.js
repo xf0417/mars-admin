@@ -56,7 +56,7 @@ export function generateMenus (routes, basePath = '') {
             route = {
                 ...item,
                 path: routePath,
-                chidren:[]
+                children:[]
             }
             //icon && title
         }
@@ -64,8 +64,8 @@ export function generateMenus (routes, basePath = '') {
             result.push(route)
         }
         //存在children 存在meta
-        if(item.chidren){
-            route.chidren.push(...generateMenus(item.chidren, route.path))
+        if(item.children){
+            route.children.push(...generateMenus(item.children, route.path))
         }
     })
     return result

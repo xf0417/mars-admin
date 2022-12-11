@@ -27,7 +27,7 @@ const i18n = createI18n({
     //使用composition API
     legacy: false,
     globalInjection: true,
-    locale: getLanguage() || 'zh',
+    locale: getLanguage() || 'en',
     messages
 })
 

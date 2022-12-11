@@ -46,6 +46,7 @@ import { validatePassword } from './rules'
 import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
 import langselect from '@/components/LangSelect/index.vue'
+import { useI18n } from 'vue-i18n'
 const router = useRouter()
 //数据源
 const loginForm = ref({
@@ -53,11 +54,12 @@ const loginForm = ref({
     password: '123456'
 })
 //验证规则
+const i18n = useI18n()
 const loginRules = ref({
     username: {
         required: true,
         trigger: 'blur',
-        message: '用户名必须填'
+        message: i18n.t('msg.login.usernameRule')
     },
     password: {
         required: true,

@@ -3,9 +3,9 @@
         <transition-group name="breadcrumb">
             <el-breadcrumb-item v-for="(item,index) in breadcrumbData" :key="item.path">
             <!-- 不可点击项 -->
-            <span class="no-redirect" v-if="(index === breadcrumbData.length-1)">{{item.meta.title}}</span>
+            <span class="no-redirect" v-if="(index === breadcrumbData.length-1)">{{generateTitle(item.meta.title)}}</span>
             <!-- 可点击项 -->
-            <span class="redirect" v-else @click="onLinkClick(item)">{{item.meta.title}}</span>
+            <span class="redirect" v-else @click="onLinkClick(item)">{{generateTitle(item.meta.title)}}</span>
         </el-breadcrumb-item>
         </transition-group>
     </el-breadcrumb>
@@ -14,7 +14,7 @@
 <script setup>
 import {  ref,watch } from 'vue'
 import { useRoute, useRouter }from 'vue-router'
-
+import { generateTitle } from '@/utils/i18n'
 
 //生成数组数据
 const breadcrumbData = ref([])

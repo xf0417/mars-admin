@@ -1,7 +1,8 @@
 <template>
     <div class="app-wrapper" :class="[$store.getters.sidebarOpened ? 'openSidebar' : 'hideSidebar']">
         <!--左侧menu-->
-        <Sidebar class="sidebar-container"/>
+        <Sidebar class="sidebar-container"
+        :style="{backgroundColor: $store.getters.cssVar.menuBg}"/>
         <div class="main-container">
             <div class="fixed-header">
                 <!--顶部navbar-->

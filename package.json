@@ -12,6 +12,8 @@
     "@element-plus/icons-vue": "^2.0.10",
     "axios": "^1.2.0",
     "element-plus": "^2.2.22",
+    "fuse": "^0.4.0",
+    "fuse.js": "^6.6.2",
     "md5": "^2.3.0",
     "path-browserify": "^1.0.1",
     "screenfull": "^6.0.2",

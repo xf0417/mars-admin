@@ -7,8 +7,8 @@ export function generateTitle(title) {
 }
 /**
  *
- * @param  {...any} cbs 所有的回调
- */
+ * 监听语言变化 
+ *  */
 export function watchSwitchLang(...cbs) {
   watch(
     () => store.getters.language,

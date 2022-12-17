@@ -1,0 +1,26 @@
+.breadcrumb-enter-active,
+.breadcrumb-leave-active {
+    transition: all 0.5s;
+}
+.breadcrumb-enter-from,
+.breadcrumb-leave-active {
+    opacity: 0;
+    transition: translateX(20px);
+}
+.breadcrumb-leave-active {
+    position: absolute;
+}
+
+//路由切换动画
+.fade-transform-leave-active,
+.fade-transform-enter-active {
+    transform: all 0.5s;
+}
+.fade-transform-leave-from {
+    opacity: 0;
+    transform: translateX(30px);
+}
+.fade-transform-leave-to {
+    opacity: 0;
+    transform: translateX(30px);
+}

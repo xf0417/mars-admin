@@ -97,7 +97,7 @@ const logout = () => {
             }
         }
 
-        ::v-deep(.avatar-container) {
+        :deep .avatar-container {
             cursor: pointer;
 
             .avatar-wrapper {

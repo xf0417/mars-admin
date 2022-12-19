@@ -11,6 +11,7 @@
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.10",
     "axios": "^1.2.0",
+    "driver.js": "^0.9.8",
     "element-plus": "^2.2.22",
     "fuse": "^0.4.0",
     "fuse.js": "^6.6.2",

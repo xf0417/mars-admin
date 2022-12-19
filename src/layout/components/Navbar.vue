@@ -4,10 +4,9 @@
         <div class="hamburger-container" >
             <hamburger/>
         </div>
-        <div>
-            <Breadcrumb class="breadcrumb-container" />
-        </div>
+            <Breadcrumb id="guide-breadcrumb" class="breadcrumb-container" />
         <div class="right-menu">
+            <Guide class="right-menu-item hover-effect"/>
             <Headersearch class="right-menu-item hover-effect"/>
             <Screenfull class="right-menu-item hover-effect" />
             <ThemePicker class="right-menu-item hover-effect" />
@@ -48,6 +47,7 @@ import LangSelect from '@/components/LangSelect/index.vue'
 import ThemePicker from '@/components/ThemeSelect/index.vue'
 import Screenfull from '@/components/Screenfull/index.vue'
 import Headersearch from '@/components/Headersearch/index.vue'
+import Guide from '@/components/Guide/index.vue'
 
 const store = useStore()
 const logout = () => {

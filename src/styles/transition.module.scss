@@ -14,11 +14,11 @@
 //路由切换动画
 .fade-transform-leave-active,
 .fade-transform-enter-active {
-    transform: all 0.5s;
+    transition: all 0.5s;
 }
-.fade-transform-leave-from {
+.fade-transform-enter-from {
     opacity: 0;
-    transform: translateX(30px);
+    transform: translateX(-30px);
 }
 .fade-transform-leave-to {
     opacity: 0;

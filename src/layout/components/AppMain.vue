@@ -67,6 +67,6 @@ watchSwitchLang(() => {
     position: relative;
     overflow: hidden;
     padding: 104px 20px 20px 20px;
-
+    box-sizing: border-box;
 }
 </style>

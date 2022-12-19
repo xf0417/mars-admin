@@ -1,8 +1,8 @@
 <template>
     <div class="navbar">
         <!-- 汉堡按钮 -->
-        <div>
-            <hamburger class="hamburger-container" />
+        <div class="hamburger-container" >
+            <hamburger/>
         </div>
         <div>
             <Breadcrumb class="breadcrumb-container" />

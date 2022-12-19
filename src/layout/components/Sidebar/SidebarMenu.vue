@@ -23,7 +23,6 @@ const routes = computed(() => {
     const filterRoutes = filterRouters(router.getRoutes())
     return generateMenus(filterRoutes)
 })
-console.log(JSON.stringify(routes.value))
 
 const route = useRouter()
 const activeMenu = computed(() => {

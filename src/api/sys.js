@@ -20,7 +20,7 @@ export const login = data => {
  */
 export const getUserInfo = () => {
     return request({
-        url:'/sys/profile'
+        url:'/profile'
     })
 }
 // export const addRecords = (data) => {

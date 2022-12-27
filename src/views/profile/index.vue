@@ -30,6 +30,7 @@ import Feature from './components/Feature.vue'
 import Chapter from './components/Chapter.vue'
 import Author from './components/Author.vue'
 import {feature} from '@/api/user.js'
+import {watchSwitchLang} from '@/utils/i18n'
 
 const activeName = ref('feature')
 
@@ -38,6 +39,7 @@ const getFeatureData = async() => {
   featureData.value = await feature()
 }
 getFeatureData()
+watchSwitchLang(getFeatureData)
 </script>
 
 <style lang="scss" scoped>

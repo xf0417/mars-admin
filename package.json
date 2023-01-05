@@ -11,18 +11,19 @@
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.10",
     "axios": "^1.2.0",
+    "dayjs": "^1.11.7",
     "driver.js": "^0.9.8",
     "element-plus": "^2.2.22",
-    "fuse": "^0.4.0",
+    "fuse": "^0.0.8",
     "fuse.js": "^6.6.2",
     "md5": "^2.3.0",
     "path-browserify": "^1.0.1",
     "screenfull": "^6.0.2",
-    "vite-plugin-svg-icons": "^2.0.1",
     "vue": "^3.2.41",
     "vue-i18n": "^9.3.0-beta.10",
     "vue-router": "^4.1.5",
-    "vuex": "^4.0.2"
+    "vuex": "^4.0.2",
+    "xlsx": "^0.17.0"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.4",
@@ -40,6 +41,7 @@
     "rgb-hex": "^4.0.0",
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0",
-    "vite": "^3.1.8"
+    "vite": "^3.1.8",
+    "vite-plugin-svg-icons": "^2.0.1"
   }
 }

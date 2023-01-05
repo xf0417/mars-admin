@@ -497,8 +497,7 @@
       "message": "获取资料成功"
     }
   },
-
-  "list":{
+  "list": {
     "success": true,
     "code": 200,
     "data": {
@@ -530,15 +529,42 @@
           "openTime": "1559318400000",
           "mobile": "188xxxx0002",
           "avatar": "https://img4.sycdn.imooc.com/61110c2b0001152907400741-140-140.jpg"
+        },
+        {
+          "role": [
+            {
+              "id": "3",
+              "title": "员工"
+            }
+          ],
+          "_id": "3423523523525",
+          "id": "5464564645",
+          "username": "yuangong",
+          "openTime": "1559318400000",
+          "mobile": "188xxxx0222",
+          "avatar": "https://img4.sycdn.imooc.com/61110c2b0001152907400741-140-140.jpg"
         }
       ],
-      "total": 73,
+      "total": 3,
       "page": "1",
       "size": "2"
     },
     "message": "success"
-  }
+  },
+  "import": [
+    [
+      {
+        "username": "张三",
+        "mobile": 123495868,
+        "role": "管理员",
+        "openTime": "2022-01-02"
+      },
+      {
+        "username": "李四",
+        "mobile": 138940553,
+        "role": "员工",
+        "openTime": "2021-04-23"
+      }
+    ]
+  ]
 }
-
-
-

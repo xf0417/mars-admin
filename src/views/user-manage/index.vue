@@ -2,7 +2,7 @@
   <div class="user-manage-container">
     <el-card class="header">
       <div>
-        <el-button type="primary">{{ $t('msg.excel.importExcel') }}</el-button>
+        <el-button type="primary" @click="onImportExcelClick">{{ $t('msg.excel.importExcel') }}</el-button>
         <el-button type="success">{{ $t('msg.excel.exportExcel') }}</el-button>
       </div>
     </el-card>
@@ -23,7 +23,7 @@
         </el-table-column>
         <!-- 角色 -->
         <el-table-column :label="$t('msg.excel.role')">
-          <template #default="row">
+          <template v-slot="{ row }">
             <div v-if="row.role && row.role.length > 0">
               <el-tag v-for="item in row.role" :key="item.id" size="mini">
                 {{ item.title }}
@@ -37,7 +37,11 @@
           </template>
         </el-table-column>
         <!-- 时间 -->
-        <el-table-column prop="openTime" :label="$t('msg.excel.openTime')"></el-table-column>
+        <el-table-column :label="$t('msg.excel.openTime')">
+        <template #default="{row}">
+          {{ $filters.dateFilter(row.openTime) }}
+        </template>
+        </el-table-column>
         <!-- 操作 -->
         <el-table-column :label="$t('msg.excel.action')" fixed="right" width="200px">
           <template #default>
@@ -47,7 +51,15 @@
           </template>
         </el-table-column>
       </el-table>
-      <el-pagination></el-pagination>
+      <el-pagination 
+      class="pagination" 
+      @size-change="handleSizeChange"
+      @current-change="handleCurrentChange"
+      :current-page="page"
+      :page-size="size"
+      :page-sizes="[2,5,10,20]"
+      layout="total,sizes,prev,next,jumper"
+      :total="total"></el-pagination>
     </el-card>
   </div>
 
@@ -57,7 +69,7 @@
 import { ref } from 'vue'
 import { getUserManageList } from '@/api/user-manage'
 import { watchSwitchLang } from '@/utils/i18n'
-
+import {useRouter} from 'vue-router'
 //数据相关
 const tableData = ref([])
 const total = ref(0)
@@ -75,8 +87,36 @@ const getListData = async () => {
 }
 getListData()
 watchSwitchLang(getListData)
+const handleSizeChange = () => {}
+const handleCurrentChange = () => {}
+
+//excel导入
+const router = useRouter()
+const onImportExcelClick = () => {
+  router.push('/user/import')
+}
+
 </script>
 
 <style lang="scss" scoped>
+.user-manage-container {
+  .header {
+    margin-bottom: 22px;
+    text-align: right;
+  }
+  :deep .avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
 
+  :deep .el-tag {
+    margin-right: 6px;
+  }
+
+  .pagination {
+    margin-top: 20px;
+    text-align: center;
+  }
+}
 </style>

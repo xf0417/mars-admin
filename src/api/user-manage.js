@@ -7,3 +7,12 @@ export const getUserManageList = data => {
         data
     })
 }
+
+export const userBatchImport = data => {
+    return request({
+        url: '/import',
+        method: 'POST',
+        data
+    })
+}
+

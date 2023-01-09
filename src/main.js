@@ -14,10 +14,13 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import installFilter from '@/filters/index.js'
 // 需要全局引入再添加
 import svgIcon from '@/components/SvgIcon/index.vue' // 全局svg图标组件
+//指令
+import installDirective from '@/directives'
+
 
 const app = createApp(App);
 
-app.use(installFilter).use(router).use(store).use(ElementPlus,{locale:store.getters.language === 'en' ? en : zhCn}).use(i18n);
+app.use(installDirective).use(installFilter).use(router).use(store).use(ElementPlus,{locale:store.getters.language === 'en' ? en : zhCn}).use(i18n);
 app.component('svg-icon', svgIcon)
 
 app.mount("#app");

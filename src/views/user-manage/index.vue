@@ -45,7 +45,7 @@
         <!-- 操作 -->
         <el-table-column :label="$t('msg.excel.action')" fixed="right" width="200px">
           <template v-slot="{ row }">
-            <el-button type="primary" size="small">{{ $t('msg.excel.show') }}</el-button>
+            <el-button type="primary" size="small" @click="onShowClick(row_id)">{{ $t('msg.excel.show') }}</el-button>
             <el-button type="info" size="small">{{ $t('msg.excel.showRole') }}</el-button>
             <el-button type="danger" size="small" @click="onRemoveClick(row)">{{ $t('msg.excel.remove') }}</el-button>
           </template>
@@ -101,6 +101,11 @@ const handleCurrentChange = (currentPage) => {
   page.value = currentPage
   getListData()
 }
+//查看用户详情
+const router = useRouter()
+const onShowClick = (id) => {
+  router.push('/user/info/${id}')
+}
 //删除用户
 const i18n = useI18n()
 const onRemoveClick = (row) => {
@@ -119,7 +124,7 @@ const onRemoveClick = (row) => {
   })
 }
 //excel导入
-const router = useRouter()
+// const router = useRouter()
 const onImportExcelClick = () => {
   router.push('/user/import')
 }

@@ -35,10 +35,11 @@ const privateRouters = [
         }
       },
       {
-        path: '/user/info',
-        // path: '/user/info/:id',
+        // path: '/user/info',
+        path: '/user/info/:id',
         name: 'userInfo',
         component: () => import('@/views/user-info/index.vue'),
+        props:true,
         meta: {
           title: 'userInfo',
         }

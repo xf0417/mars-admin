@@ -7,9 +7,16 @@ export const getUserManageList = data => {
         params: data
     })
 }
+//获取用户列表数据
 export const getUserManageAllList = () => {
     return request({
         url: '/list',
+    })
+}
+//获取用户详情
+export const userDetail = (id) => {
+    return request({
+        url: '/userInfo',
     })
 }
 

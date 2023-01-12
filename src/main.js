@@ -20,7 +20,7 @@ import installDirective from '@/directives'
 
 const app = createApp(App);
 
-app.use(installDirective).use(installFilter).use(router).use(store).use(ElementPlus,{locale:store.getters.language === 'en' ? en : zhCn}).use(i18n);
+app.use(store).use(router).use(installDirective).use(installFilter).use(ElementPlus,{locale:store.getters.language === 'en' ? en : zhCn}).use(i18n);
 app.component('svg-icon', svgIcon)
 
 app.mount("#app");

@@ -9,6 +9,6 @@ export default createStore({
     modules:{
         user,
         app,
-        theme
+        theme,
     }
 })

@@ -46,7 +46,7 @@
         <el-table-column :label="$t('msg.excel.action')" fixed="right" width="200px">
           <template v-slot="{ row }">
             <el-button type="primary" size="small" @click="onShowClick(row_id)">{{ $t('msg.excel.show') }}</el-button>
-            <el-button type="info" size="small">{{ $t('msg.excel.showRole') }}</el-button>
+            <el-button type="info" size="small" @click="onShowRoleClick(row)">{{ $t('msg.excel.showRole') }}</el-button>
             <el-button type="danger" size="small" @click="onRemoveClick(row)">{{ $t('msg.excel.remove') }}</el-button>
           </template>
         </el-table-column>
@@ -62,18 +62,23 @@
       :total="total"></el-pagination>
     </el-card>
     <ExportToExcel v-model="exportToExcelVisible"></ExportToExcel>
+    <RolesDialog 
+    v-model="roleDialogVisible" 
+    :userId="selectUserId"
+    @updateRole="getListData"></RolesDialog>
   </div>
 
 </template>
 
 <script setup>
-import { ref,onActivated } from 'vue'
+import { ref,onActivated,watch } from 'vue'
 import { getUserManageList,deleteUser } from '@/api/user-manage'
 import { watchSwitchLang } from '@/utils/i18n'
 import {useRouter} from 'vue-router'
 import { ElMessageBox, ElMessage} from 'element-plus'
 import { useI18n } from 'vue-i18n'
 import  ExportToExcel  from './components/Export2Excel.vue'
+import RolesDialog from './components/roles.vue'
 //数据相关
 const tableData = ref([])
 const total = ref(0)
@@ -106,6 +111,17 @@ const router = useRouter()
 const onShowClick = (id) => {
   router.push('/user/info/${id}')
 }
+//为员工分配角色
+const roleDialogVisible = ref(false)
+const selectUserId = ref('')
+const onShowRoleClick = (row) => {
+  roleDialogVisible.value = true
+  selectUserId.value = row._id
+}
+
+watch(roleDialogVisible,val => {
+  if(!val) selectUserId.value = ''
+})
 //删除用户
 const i18n = useI18n()
 const onRemoveClick = (row) => {

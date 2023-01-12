@@ -30,6 +30,22 @@ export const userBatchImport = data => {
 //删除用户
 export const deleteUser = id => {
     return request({
-        url: '/list',
+        url: `/list/role/${id}`,
+        method:'delete'
+    })
+}
+//获取指定用户的角色
+export const userRoles = id => {
+    return request({
+        url: '/userRole',
+    })
+}
+//分配角色
+export const updateRole = data => {
+    return request({
+        url: '/userRole',
+        method:'POST',
+        data
+           
     })
 }

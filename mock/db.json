@@ -248,6 +248,12 @@
   "list": {
     "success": true,
     "code": 200,
+    "role": [
+      {
+        "id": "1",
+        "title": "超级管理员"
+      }
+    ],
     "data": {
       "list": [
         {
@@ -464,18 +470,7 @@
     "message": "获取资料成功"
   },
   "userRole": {
-    "success": true,
-    "code": 200,
-    "data": {
-      "role": [
-        {
-          "id": "1",
-          "title": "超级管理员"
-        }
-      ],
-      "_id": "63bf15405b240e6e0de8caf7"
-    },
-    "message": "success"
+    "63bf15405b240e6e0de8caf7": ""
   },
   "userRoleChange": {
     "success": true,
@@ -524,5 +519,117 @@
       "1-3",
       "2"
     ]
+  },
+  "articleList": {
+    "success": true,
+    "code": 200,
+    "data": {
+      "list": [
+        {
+          "_id": "63c1b8405b240e6e0de8e4db",
+          "ranking": 1,
+          "title": "Vue3 + 全家桶",
+          "author": "Sunday",
+          "publicDate": "1629099597000",
+          "desc": "项目基于最新的vue3全家桶进行开发"
+        },
+        {
+          "_id": "63c1b8405b240e6e0de8e4e4",
+          "ranking": 2,
+          "title": "Tags View",
+          "author": "Sunday",
+          "publicDate": "1629099597000",
+          "desc": "便签快捷导航功能"
+        },
+        {
+          "_id": "63c1b8405b240e6e0de8e4e3",
+          "ranking": 3,
+          "title": "动态面包屑",
+          "author": "Sunday",
+          "publicDate": "1629099597000",
+          "desc": "动态生成的面包屑数据"
+        },
+        {
+          "_id": "63c1b8405b240e6e0de8e4dd",
+          "ranking": 4,
+          "title": "vue-element-admin",
+          "author": "Sunday",
+          "publicDate": "1629099597000",
+          "desc": "后台前端解决方案"
+        },
+        {
+          "_id": "63c1b8405b240e6e0de8e4de",
+          "ranking": 5,
+          "title": "ESLint + Git Hooks",
+          "author": "Sunday",
+          "publicDate": "1629099597000",
+          "desc": "编码规范"
+        },
+        {
+          "_id": "63c1b8405b240e6e0de8e4dc",
+          "ranking": 6,
+          "title": "Element-Plus",
+          "author": "Sunday",
+          "publicDate": "1629099597000",
+          "desc": "基于 Vue 3.0 的桌面端组件库"
+        },
+        {
+          "_id": "63c1b8405b240e6e0de8e4e0",
+          "ranking": 7,
+          "title": "权限验证",
+          "author": "Sunday",
+          "publicDate": "1629099597000",
+          "desc": "页面权限、功能权限、动态权限、权限配置"
+        },
+        {
+          "_id": "63c1b8405b240e6e0de8e4df",
+          "ranking": 8,
+          "title": "架构设计",
+          "author": "Sunday",
+          "publicDate": "1629099597000",
+          "desc": "架构设计"
+        },
+        {
+          "_id": "63c1b8405b240e6e0de8e4e1",
+          "ranking": 9,
+          "title": "功能引导",
+          "author": "Sunday",
+          "publicDate": "1629099597000",
+          "desc": "对用户的功能引导"
+        },
+        {
+          "_id": "63c1b8405b240e6e0de8e4e2",
+          "ranking": 10,
+          "title": "侧边栏",
+          "author": "Sunday",
+          "publicDate": "1629099597000",
+          "desc": "根据路由动态生成的 Menu 菜单"
+        }
+      ],
+      "total": 11,
+      "page": "1",
+      "size": "10"
+    },
+    "message": "success"
+  },
+  "articleSort": {
+    "initRanking": 2,
+    "finalRanking": 1
+  },
+  "articleDetail": {
+    "success": true,
+    "code": 200,
+    "data": {
+      "_id": "63c1b8405b240e6e0de8e4db",
+      "ranking": 1,
+      "title": "Vue3 + 全家桶",
+      "author": "Sunday",
+      "publicDate": "1629099597000",
+      "desc": "项目基于最新的vue3全家桶进行开发"
+    },
+    "message": "success"
+  },
+  "articleCreate": {
+    "content": "<p>分嗡嗡飞舞</p>"
   }
 }

@@ -30,7 +30,7 @@ export const userBatchImport = data => {
 //删除用户
 export const deleteUser = id => {
     return request({
-        url: `/list/role/${id}`,
+        url: `/list/role?id=1`,
         method:'delete'
     })
 }
